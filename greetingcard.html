@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/page2.css">
+    <title>GreetingCards</title>
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="goBack()"><a href="index.html">Back</a></button>
+        <h1>Greeting Cards</h1>
+    </header>
+    <main class="product-container">
+        <div class="product">
+            <a href="html/greetingAdd.html"><img src="images/greeting1.jpeg" alt="Jewelry"></a>
+            <h2>Friendship Day</h2>
+            <span class = "fw-bold d-block"><b>250.00 Rs</b></span>
+            <!-- <button onclick="customize('jewelry')">Add to Cart</button> -->
+        </div>
+
+        <div class="product">
+            <a href="html/greetingAdd2.html"><img src="images/greeting.jpeg" alt="Frames"></a>
+            <h2>Card</h2>
+            <span class = "fw-bold d-block"><b>280.00 Rs</b></span>
+            <!-- <button onclick="customize('jewelry')">Add to Cart</button> -->
+        </div>
+        
+        <div class="product">
+            <a href="html/greetingAdd3.html"><img src="images/card3.jpg" alt="Jewelry"></a>
+            <h2>Card</h2>
+       
+            <span class = "fw-bold d-block"><b>310.00 Rs</b></span>
+            <!-- <button onclick="customize('jewelry')">Add to Cart</button> -->
+        </div>
+        
+        <!-- Repeat similar product listings for cards, decorative items, cups, t-shirts, etc. -->
+    </main>
+    <div id="customization-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Customize Your Product</h2>
+            <!-- Customization options go here -->
+            <button onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+    <script src="js/page2.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details - E-commerce Website</title>
+    <link rel="stylesheet" href="/css/page3.css">
+
+  </head>
+  <body>
+    <header>
+      <button class="back-button" onclick="goBack()">Back</button>
+      <h1>Product Details - E-commerce Website</h1>
+    </header>
+
+    <div class="product-details-container">
+      <h2>Cushion</h2>
+      <img class="product-image" src="/images/cushion.jpg" alt="Customize Cushion" width="200" height="200" />
+      
+      <h3>Customized Cushion</h3>
+
+
+      <div class="size-options">
+        <label for="size">Select Size:</label>
+        <select id="size">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+
+      <div class="quantity-section">
+        <label for="quantity">Select Quantity:</label>
+        <input type="number" id="quantity" value="1" min="1" />
+      </div>
+
+      <div class="price-details">
+        <p>Price: 300.00</p>
+        <!-- <p>Delivery Charge: 15.00</p> -->
+      </div>
+
+      <button onclick="addToCart()">Add to Cart</button>
+      <button><a href="https://forms.gle/m3fNCBNBaacLoWcJ7">Get Customized</a></button>
+    </div>
+
+    
+
+   <script src="/js/page3.js"></script>
+  </body>
+</html>

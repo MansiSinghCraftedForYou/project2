@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .cart-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column; /* Adjusted to stack elements vertically */
+      justify-content: space-between;
+      align-items: flex-start; /* Adjusted alignment */
+    }
+
+    .item-details {
+      flex: 1;
+    }
+
+    .item-quantity {
+      margin-top: 10px; /* Adjusted spacing */
+    }
+
+    .total-amount {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button {
+      background-color: #410330;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    button:hover {
+      background-color: #e77eb9;
+    }
+
+    #checkoutButton {
+      background-color: #410330;
+      margin-top: 20px; /* Adjusted spacing */
+    }
+
+    #checkoutButton:hover {
+      background-color: #e77eb9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shopping Cart</h1>
+  </header>
+
+  <div class="cart-container" id="cartContainer">
+    <!-- Cart items will be dynamically added here using JavaScript -->
+  </div>
+
+  <button id="checkoutButton"><a href="checkout.html">Checkout</a></button>
+
+  <script>
+    // Fetch cart items from localStorage
+    var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Function to render cart items on the page
+    function renderCart() {
+      var cartContainer = document.getElementById('cartContainer');
+      cartContainer.innerHTML = ''; // Clear previous content
+
+      if (cartItems.length === 0) {
+        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+      } else {
+        cartItems.forEach(function(item) {
+          var cartItemDiv = document.createElement('div');
+          cartItemDiv.className = 'cart-item';
+
+          var itemDetailsDiv = document.createElement('div');
+          itemDetailsDiv.className = 'item-details';
+          itemDetailsDiv.innerHTML = '<h3>' + item.name + '</h3>' +
+            '<p>Size: ' + item.size + '</p>' +
+            '<p>Quantity: <span class="quantity" data-index="' + cartItems.indexOf(item) + '" contenteditable="true">' + item.quantity + '</span></p>' +
+            '<p>Price: $' + item.price.toFixed(2) + '</p>';
+
+          var removeButton = document.createElement('button');
+          removeButton.innerHTML = 'Remove';
+          removeButton.onclick = function () {
+            removeItem(cartItems.indexOf(item));
+          };
+
+          cartItemDiv.appendChild(itemDetailsDiv);
+          cartItemDiv.appendChild(removeButton);
+          cartContainer.appendChild(cartItemDiv);
+        });
+      }
+
+      // Display total amount
+      var totalAmount = cartItems.reduce(function (sum, item) {
+        return sum + item.total;
+      }, 0);
+      var totalAmountDiv = document.createElement('div');
+      totalAmountDiv.className = 'total-amount';
+      totalAmountDiv.innerHTML = 'Total: $' + totalAmount.toFixed(2);
+      cartContainer.appendChild(totalAmountDiv);
+    }
+
+    // Event listener for inline quantity editing
+    document.addEventListener('input', function (event) {
+      if (event.target.classList.contains('quantity')) {
+        var index = parseInt(event.target.dataset.index);
+        var newQuantity = parseInt(event.target.innerText);
+        if (!isNaN(newQuantity)) {
+          updateQuantity(index, newQuantity);
+        }
+      }
+    });
+
+    // Function to update quantity
+    function updateQuantity(index, newQuantity) {
+      cartItems[index].quantity = newQuantity;
+      cartItems[index].total = cartItems[index].price * newQuantity;
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      renderCart();
+    }
+
+    // Function to remove item from the cart
+    function removeItem(index) {
+      console.log('Removing item at index:', index);
+      // Check if the index is valid
+      if (index >= 0 && index < cartItems.length) {
+        cartItems.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        console.log('Item removed. Updated cart:', cartItems);
+        renderCart();
+      } else {
+        console.error('Invalid index:', index);
+      }
+    }
+
+    // Initial rendering of the cart
+    renderCart();
+  </script>
+</body>
+</html>

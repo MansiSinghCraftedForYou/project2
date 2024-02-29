@@ -1,0 +1,102 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+
+header {
+    background-color: #410330;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .back-button {
+    position: absolute;
+    top: 25px;
+    left: 36px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+
+/* Style the product container */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Style the product card */
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 5px #888888;
+    width: 270px;
+}
+
+.product img {
+    width: 270px;
+    height: 260px;
+}
+
+/* Style the "Customize" button */
+button {
+    background-color:#080808;
+    color:white ;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 35px;
+}
+button:hover {
+    background-color: #a3b4c6;
+}
+
+/* Style the customization modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 20px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftedForYou</title>
+    
+    <!-- Box-icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+
+<body>
+    <header>
+        <div class="nav container" >
+            <a href="#" class="logo"><span>CraftedForYou</span></a>
+            <button class="getcustomized"><a href="https://forms.gle/ANqx8cvmFvob6t4J8">Get Customized</a></button>
+            <a href="login.html" class="login">Sign Up</a>
+        </div>
+        <!-- <div class="cart-icon" onclick="openCart()">
+            <i class='bx bx-cart-alt'></i>
+        </div> -->
+
+        <div id="cartIcon" onclick="redirectToCart()">
+            <!-- 🛒 Cart -->
+            <i class='bx bx-cart-alt'></i>
+            <span id="cartBadge">0</span>
+          </div>
+      
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text container">
+            <h2 class="home-title">Your Imagination, Our Creation</h2>
+            <span class="home-subtitle">Customize items according to you</span>
+        </div>
+    </section>
+
+    <div class="post-filter container">
+        <span class="filter-item active-filter" data-filter="all">All</span>
+        <span class="filter-item" data-filter="jewellery">Jewellery</span>
+        <span class="filter-item" data-filter="decorative">Decorative</span>
+        <span class="filter-item" data-filter="album">Cards & Albums</span>
+        <span class="filter-item" data-filter="frame">Frames</span>
+        <span class="filter-item" data-filter="others">Others</span>
+    </div>
+    
+    <div class="post container">
+        <!-- decorative-->
+        <div class="post-box decorative">
+            <a href="tabledecorative.html"><img src="images/decorative6.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Decorative</h2>
+            <a href="#" class="post-title">Table Decore</a>
+        </div>
+        <div class="post-box decorative">
+            <a href="wall.html"><img src="images/decorative2.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Decorative</h2>
+            <a href="#" class="post-title">Wall Decore</a>
+        </div>
+        
+        <!-- Jewellery -->
+        <div class="post-box jewellery">
+            <a href="woodan.html"><img src="images/jwellery1.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Necklace</h2>
+            <a href="#" class="post-title">Wooden Jewellery</a>
+        </div>
+        <div class="post-box jewellery">
+            <a href="wool.html"><img src="images/jwellery3.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Necklace</h2>
+            <a href="#" class="post-title">Wool Jewellery</a>
+        </div>
+        <div class="post-box jewellery">
+            <a href="perl.html"><img src="images/jwellery2.webp" alt="" class="post-img"></a>
+            <h2 class="category">Earing</h2>
+            <a href="#" class="post-title">Perl & Bits Jewellery</a>
+        </div>
+
+        <!-- cards & album-->
+        <div class="post-box album">
+            <a href="birthdaycard.html"><img src="images/card1.jpg" alt="" class="post-img" ></a>
+            <h2 class="category">Cards</h2>
+            <a href="#" class="post-title">Birthday Card</a>
+        </div>
+        <div class="post-box album">
+            <a href="greetingcard.html"><img src="images/card3.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Card</h2>
+            <a href="#" class="post-title">Cards</a>
+        </div>
+        <div class="post-box album">
+            <a href="scrapbook.html"><img src="images/album2.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Album</h2>
+            <a href="#" class="post-title">ScrapBook</a>
+        </div>
+
+        <!-- frames -->
+        <div class="post-box frame">
+            <a href="resin.html"><img src="images/frame1.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Frames</h2>
+            <a href="#" class="post-title">Resin Frame</a>
+        </div>
+        <div class="post-box frame">
+            <a href="mirrorframe.html"><img src="images/frame2.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Frame</h2>
+            <a href="#" class="post-title">Photo Frame</a>
+        </div>
+        <div class="post-box frame">
+            <a href="stringframe.html"><img src="images/decorative7.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Frame</h2>
+            <a href="#" class="post-title">String Frame</a>
+        </div>
+
+        <!-- others -->
+        <div class="post-box others">
+            <a href="tshirt.html"><img src="images/customizedtshirt.jpg" alt="" class="post-img"></a>
+            <h2 class="category">T-Shirt</h2>
+            <a href="#" class="post-title">T-Shirt</a>
+        </div>
+        <div class="post-box others">
+            <a href="cup.html"><img src="images/cup.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Coffee Mug</h2>
+            <a href="#" class="post-title">Coffee Mug</a>
+        </div>
+        <div class="post-box others">
+            <a href="pillow.html"><img src="images/cushion.jpg" alt="" class="post-img"></a>
+            <h2 class="category">Cushion</h2>
+            <a href="#" class="post-title">Cushion</a>
+        </div>
+        
+    </div>
+    <section class="about container" id="about">
+        <div class="contentBx">
+            <h2 class="titleText">About Us</h2>
+            <p class="title-text">
+                Through this website people can get their items customized as per their preferences and Style. To avail this service, users will send us image of the items they want to get customized, such as – Jwellerey, Frames, cards & Album, Decorative items.  
+                The benefit of this website is that people can get their favorite items customized according to their preferences.
+            </p>
+        </div>
+        <div class="imgBx">
+            <img src="images/sideBanner.webp" alt="" class="fitBg">
+        </div>
+    </section>
+
+
+<!-- Feedback form -->
+<div class="contain">
+    <form action="" id="contactform">
+        <!-- <div class="alert">Your message sent</div> -->
+        <h2>Give Us Your Feedback </h2>
+        <div class="inputBox">
+            <input type="text" id="name" placeholder="Your name...." />
+        </div>
+
+        <div class="inputBox">
+            <input type="email" id="emailid" placeholder="Your Email....." />
+        </div>
+
+        <div class="inputBox">
+            <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
+        </div>
+
+        <div class="inputBox">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+    
+<!-- Footer section -->
+    <footer>
+        <div class="footer-container">
+        
+            <div class="sec category">
+                <h2>Category</h2>
+                <ul>
+                    <li><a href="#">Gifts</a></li>
+                    <li><a href="#">Frames</a></li>
+                    <li><a href="#">Cards</a></li>
+                    <li><a href="#">Album</a></li>
+                    <li><a href="#">Jwellery</a></li>
+                    <li><a href="#">Decorative items</a></li>
+                </ul>
+            </div>
+            
+            <div class="sec quicklinks">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="sec contactBx">
+                <h2>Contact Info</h2>
+                <ul class="info">
+                    <li>
+                        <span><i class='bx bxs-map'></i></span>
+                        <span>Phone No:123xxxx789 </span>
+                    </li>
+                    <li>
+                        <span><i class='bx bxs-map'></i></span>
+                        <span>Location:Jaipur </span>
+                    </li>
+                    <li>
+                        <span><i class='bx bx-envelope' ></i></span>
+                        <span>Mail:<a href="#">CraftedForYou@gmail.com</a></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="sec aboutus">
+                <h2>About Us</h2>
+                <ul class="sci">
+                    <li><a href="#"><i class="bx bxl-facebook"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-instagram"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                    <li><a href="#"><i class="bx bxl-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="chat">
+                <a href="https://wa.me/7737176947" target="_blank">
+                    <img src="images/WhatsappIcon.webp" alt="WhatsApp Icon" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+    function redirectToCart() {
+        window.location.href = 'cart.html'; 
+      }
+  
+      // Function to update the cart badge
+      function updateCartBadge() {
+        var cartBadge = document.getElementById('cartBadge');
+        var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        var totalItems = cartItems.reduce(function(sum, item) {
+          return sum + item.quantity;
+        }, 0);
+        cartBadge.innerText = totalItems;
+      }
+  
+      // Initial update of the cart badge
+      updateCartBadge();
+      </script>
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
